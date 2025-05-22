@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+# WIP:
 # Required parameters:
 # @raycast.schemaVersion 1
 # @raycast.title gd pull-request approve
@@ -10,7 +10,7 @@
 # @raycast.icon 🤖
 # @raycast.currentDirectoryPath ~
 # @raycast.needsConfirmation false
-# @#raycast.argument1 { "type": "text", "placeholder": "Pull Request ID" }
+# @raycast.argument1 { "type": "text", "placeholder": "Pull Request ID" }
 #
 # Documentation:
 # @raycast.description 自我实现 pull request 的 approve
@@ -78,7 +78,7 @@ def main():
     api_path = f"/api/v4/projects/{project_id}/merge_requests/{merge_request_iid}/approve"
     headers = {
         "Accept": "application/json",
-        "PRIVATE-TOKEN": f"{load_token()}",
+        "Authorization": f"Bearer {load_token()}",
         "Content-Type": "application/json",
     }
 
